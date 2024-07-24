@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    Cookie tests
+  </head>
+  <body>
+    Cookie tests
+    <p></p>
+  </body>
+  <script>
+    const p = document.querySelector('p');
+    //const host = 'http://localhost:3000';
+    const host =
+      'https://new-express-project-gzurgh9eh-wedothebest4yous-projects.vercel.app';
+
+    fetch(host + '/cookie', {
+      method: 'GET',
+      credentials: 'include',
+    })
+      .then((response) => {
+        if (!response.ok) {
+          p.textContent = 'Error occured';
+        }
+        return response.text();
+      })
+      .then((data) => {
+        p.textContent = data;
+      });
+  </script>
+</html>
