@@ -4,6 +4,7 @@ const session = require('express-session');
 const cors = require('cors');
 const app = express();
 
+app.set('trust proxy', 1);
 app.use(
   session({
     secret: 'keyboard cat',
@@ -26,7 +27,7 @@ app.get('/cookie', (req, res, next) => {
   if (req.session?.somecookie) {
     response = 'Same cookie: A cookie received and the same sent to client';
   } else {
-    res.session.somecookie = 'cookie text';
+    req.session.somecookie = 'cookie text';
     response = 'New cookie: A new cookie created and sent to the client';
   }
   res.send(response);
