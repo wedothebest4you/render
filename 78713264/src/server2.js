@@ -1,5 +1,6 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
+const expresssess
 const cors = require('cors');
 const app = express();
 
@@ -16,7 +17,7 @@ app.get('/cookie', (req, res, next) => {
   if (req.cookies?.somecookie) {
     response = 'Same cookie: A cookie received and the same sent to client';
   } else {
-    res.cookie('somecookie', 'cookie text', { secure: true });
+    res.cookie('somecookie', 'cookie text');
     response = 'New cookie: A new cookie created and sent to the client';
   }
   res.send(response);
