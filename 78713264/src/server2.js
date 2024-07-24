@@ -25,10 +25,14 @@ app.use(
 app.get('/cookie', (req, res, next) => {
   let response;
   if (req.session?.somecookie) {
-    response = 'Same cookie: A cookie received and the same sent to client';
+    response =
+      'Same cookie: A cookie received and the same sent to client - protocol ' +
+      req.protocol;
   } else {
     req.session.somecookie = 'cookie text';
-    response = 'New cookie: A new cookie created and sent to the client';
+    response =
+      'New cookie: A new cookie created and sent to the client - protocol ' +
+      req.protocol;
   }
   res.send(response);
 });
