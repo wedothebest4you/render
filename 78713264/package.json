@@ -5,8 +5,8 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
-    "start": "node src/server.js",
-    "server": "nodemon src/server.js"
+    "start": "node src/server2.js",
+    "server": "nodemon src/server2.js"
   },
   "keywords": [],
   "author": "",
