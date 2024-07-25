@@ -24,17 +24,16 @@ app.use(
 
 app.get('/cookie', (req, res, next) => {
   let response;
+  const addinfo = `protocol : ${req.protocol}, host : ${
+    req.hostname
+  }, origin : ${req.get('origin')}`;
   if (req.session?.somecookie) {
-    response =
-      'Same cookie: A cookie received and the same sent to client - protocol ' +
-      req.protocol;
+    response = `Same cookie: A cookie received and the same sent to client - ${addinfo}`;
   } else {
     req.session.somecookie = 'cookie text';
-    response =
-      'New cookie: A new cookie created and sent to the client - protocol ' +
-      req.protocol;
+    response = `New cookie: A new cookie created and sent to the client - ${addinfo}`;
   }
-  res.send(response);
+  res.send(`<h1>${response}</h1>`);
 });
 
 app.listen(4000, () => {
