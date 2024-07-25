@@ -10,7 +10,7 @@ app.use(
     secret: 'keyboard cat',
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: true, domain: 'somenonexistingdomain.com' },
+    cookie: { secure: true, domain: 'google.com' },
   })
 );
 
