@@ -35,7 +35,7 @@ app.get('/cookie', (req, res, next) => {
   //   response = `New cookie: A new cookie created and sent to the client - ${addinfo}`;
   // }
   // res.send(`<h1>${response}</h1>`);
-  res.cookie('authToken', token, {
+  res.cookie('authToken', 'token', {
     maxAge: 24 * 60 * 60 * 1000, // 24 hrs
     httpOnly: true,
     secure: true, // Set to true if using HTTPS
