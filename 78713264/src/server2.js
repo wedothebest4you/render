@@ -42,6 +42,10 @@ app.get('/cookie', (req, res, next) => {
     sameSite: 'None', // Adjust as needed ('Strict', 'Lax', 'None')
     path: '/',
   });
+  res.json({
+    success: true,
+    message: 'Login successful',
+  });
 });
 
 app.listen(4000, () => {
