@@ -5,7 +5,10 @@ const app = express();
 
 app.use(
   cors({
-    origin: 'http://127.0.0.1:5500',
+    origin: [
+      'http://127.0.0.1:5500',
+      'https://78892980-gaoocj2lh-wedothebest4yous-projects.vercel.app',
+    ],
     credentials: true,
   })
 );
