@@ -9,6 +9,7 @@ app.use(
       'http://127.0.0.1:5500',
       'https://78892980-gaoocj2lh-wedothebest4yous-projects.vercel.app',
     ],
+    methods: 'GET,POST,PUT,DELETE', // Allow these HTTP methods
     credentials: true,
   })
 );
